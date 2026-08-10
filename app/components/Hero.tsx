@@ -4,7 +4,7 @@ import { HatGlassesIcon } from 'lucide-react'
 
 export default function Hero() {
   return (
-    <section className="relative h-screen w-full flex items-center justify-center overflow-hidden">
+    <section id="hero" className="relative h-screen w-full flex items-center justify-center overflow-hidden">
       {/* Background Image - animated Ken Burns zoom/pan */}
       <div className="absolute inset-0 animate-bg-pan">
         <Image
