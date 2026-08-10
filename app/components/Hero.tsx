@@ -5,22 +5,23 @@ import { HatGlassesIcon } from 'lucide-react'
 export default function Hero() {
   return (
     <section className="relative h-screen w-full flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
-      <Image
-        src="/hero_banner.png"
-        alt="AnonymtNorskNr"
-        fill
-        priority
-        className="object-cover object-center"
-      />
-
+      {/* Background Image - animated Ken Burns zoom/pan */}
+      <div className="absolute inset-0 animate-bg-pan">
+        <Image
+          src="/Hero_bg.png"
+          alt="AnonymtNorskNr"
+          fill
+          priority
+          className="object-cover object-center"
+        />
+      </div>
 
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/60 to-black" />
+      <div className="absolute inset-0 bg-gradient-to-b from-white/50 via-white/60 to-black/30" />
 
       {/* Content */}
       <div data-aos="fade-up" className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center gap-6">
-        <span data-aos="fade-down" data-aos-delay="100" className="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-1.5 text-xs sm:text-sm font-medium text-white">
+        <span data-aos="fade-down" data-aos-delay="100" className="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-sm border border-primary  px-4 py-1.5 text-xs sm:text-sm font-medium text-primary">
           <HatGlassesIcon className="text-primary" /> 100% anonymous • No IP • No data stored
         </span>
         <h1
@@ -32,7 +33,7 @@ export default function Hero() {
           <br className="hidden sm:block" /> sim-card without traces
         </h1>
 
-        <p data-aos="fade-up" data-aos-delay="300" className="text-base sm:text-lg text-gray-200 max-w-xl">
+        <p data-aos="fade-up" data-aos-delay="300" className="text-base sm:text-lg text-black/80 max-w-xl">
           Register with your name or unlimited data within 60 minutes
         </p>
 
@@ -53,8 +54,8 @@ export default function Hero() {
             href="#prossessen"
             className="relative inline-flex items-center justify-center rounded-full p-[2px] overflow-hidden group"
           >
-            <span className="absolute inset-[-100%] animate-border-spin bg-[conic-gradient(from_0deg,transparent_0%,rgba(255,255,255,0.9)_25%,transparent_50%)]" />
-            <span className="relative z-10 inline-flex items-center justify-center rounded-full bg-black border border-[#ffffff3d] backdrop-blur-sm px-8 py-4 text-sm font-semibold text-white group-hover:bg-black/80 transition-colors duration-200 w-full h-full">
+            <span className="absolute inset-[-100%] animate-border-spin bg-[conic-gradient(from_0deg,transparent_0%,#ff8904_25%,transparent_50%)]" />
+            <span className="relative z-10 inline-flex items-center justify-center rounded-full bg-[#ff8904]   backdrop-blur-sm px-8 py-4 text-sm font-semibold text-white   transition-colors duration-200 w-full h-full">
               See how it works
             </span>
           </a>
@@ -71,7 +72,23 @@ export default function Hero() {
           }
         }
         .animate-border-spin {
-          animation: border-spin 3s linear infinite;
+          animation: border-spin 1s linear infinite;
+        }
+
+        @keyframes bg-pan {
+          0% {
+            transform: scale(1.1) translate(0, 0);
+          }
+          50% {
+            transform: scale(1.2) translate(-1.5%, -1%);
+          }
+          100% {
+            transform: scale(1.1) translate(0, 0);
+          }
+        }
+        .animate-bg-pan {
+          animation: bg-pan 20s ease-in-out infinite;
+          will-change: transform;
         }
       `}</style>
     </section>

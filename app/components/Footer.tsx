@@ -1,10 +1,12 @@
 import React from 'react'
 import { Globe, Mail, ShieldCheck } from 'lucide-react'
+import Link from 'next/link'
+import Image from 'next/image'
 
 const links = [
     { label: 'About us', href: '#about-us' },
     { label: 'How it works', href: '#prossessen' },
-    { label: 'Contact us', href: '#kontakt' },
+    { label: 'Contact us', href: '#contact' },
 ]
 
 export default function Footer() {
@@ -18,10 +20,17 @@ export default function Footer() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-8 pb-14">
                         {/* Brand */}
                         <div className="flex flex-col gap-4 lg:pr-8">
-                            <div className="flex items-center gap-2 text-xl font-bold text-white">
-                                <ShieldCheck size={22} className="text-primary" strokeWidth={2} />
-                                AnonymtNorskNr
-                            </div>
+                            <Link
+                                href="/"
+                                className={`font-bold tracking-tight transition-all duration-300 `}
+                            >
+                                <Image
+                                    src="/header_logo-removebg-preview.png"
+                                    alt="AnonymtNorskNr"
+                                    width={150}
+                                    height={100}
+                                />
+                            </Link>
                             <p className="text-sm text-gray-400 leading-relaxed max-w-xs">
                                 For those who prioritize privacy first.
                             </p>

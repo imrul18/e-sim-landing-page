@@ -59,7 +59,7 @@ const dontDo = [
 
 export default function Process() {
   return (
-    <section id="prossessen" className="relative w-full bg-white py-20 sm:py-28 overflow-hidden">
+    <section id="prossessen" className="relative w-full bg-[#faf9fc] py-20 sm:py-28 overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading */}
         <div data-aos="fade-up" className="max-w-2xl mx-auto text-center flex flex-col items-center gap-4 mb-16 sm:mb-20">

@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { Menu, X } from 'lucide-react'
+import Image from 'next/image'
 
 const navItems = [
   { label: 'Packages', href: '#pakker' },
@@ -47,21 +48,24 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed  top-5 rounded-full left-0 right-0 border border-primary/10 container mx-auto z-50 transition-all duration-300 ease-in-out ${
-        scrolled
-          ? 'bg-black/50 max-w-6xl backdrop-blur-md shadow-md py-4 border-[1px] border-primary/40'
-          : ' py-5 bg-black/50 backdrop-blur-sm shadow-sm '
-      }`}
+      className={`fixed  top-5 rounded-full left-0 right-0 border border-primary/10 container mx-auto z-50 transition-all duration-300 ease-in-out ${scrolled
+          ? 'bg-black/60 max-w-6xl backdrop-blur-md shadow-md py-2 border-[1px] border-primary/40'
+          : ' py-3 bg-black/60 backdrop-blur-sm shadow-sm '
+        }`}
     >
       <div className=" mx-auto px-4 flex items-center justify-between">
         {/* Logo */}
         <Link
           href="/"
-          className={`font-bold tracking-tight transition-all duration-300 ${
-            scrolled ? 'text-lg' : 'text-xl'
-          } text-primary flex items-center gap-2`}
+          className={`font-bold tracking-tight transition-all duration-300 ${scrolled ? 'text-lg' : 'text-xl'
+            } text-primary flex items-center gap-2`}
         >
-          AnonymtNorskNr
+          <Image
+            src="/header_logo-removebg-preview.png"
+            alt="AnonymtNorskNr"
+            width={150}
+            height={100}
+          />
         </Link>
 
         {/* Desktop Nav */}
@@ -71,7 +75,7 @@ export default function Header() {
               key={item.href}
               href={item.href}
               onClick={(e) => handleNavClick(e, item.href)}
-              className="text-[15px] font-medium text-white/50 hover:text-primary transition-colors duration-200"
+              className="text-[15px] font-medium text-white/80 hover:text-primary transition-colors duration-200"
             >
               {item.label}
             </a>
@@ -102,9 +106,8 @@ export default function Header() {
 
       {/* Mobile Nav */}
       <div
-        className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-          mobileOpen ? 'max-h-96 opacity-100 mt-4' : 'max-h-0 opacity-0'
-        }`}
+        className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${mobileOpen ? 'max-h-96 opacity-100 mt-4' : 'max-h-0 opacity-0'
+          }`}
       >
         <nav className="flex flex-col gap-4 px-4 pb-4 bg-black/60 backdrop-blur-md rounded-b-2xl">
           {navItems.map((item) => (

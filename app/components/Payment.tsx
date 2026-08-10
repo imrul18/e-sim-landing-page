@@ -28,7 +28,7 @@ export default function Payment() {
                 {/* Heading */}
                 <h2
                     data-aos="fade-up"
-                    className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white text-center tracking-tight mb-12 sm:mb-16"
+                    className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1a2b49] text-center tracking-tight mb-12 sm:mb-16"
                 >
                     Payment
                 </h2>
@@ -42,17 +42,17 @@ export default function Payment() {
                                 key={method.title}
                                 data-aos="fade-up"
                                 data-aos-delay={index * 150}
-                                className="group relative rounded-[20px] p-[2px] overflow-hidden"
+                                className="group relative rounded-[20px] p-[3px] overflow-hidden"
                             >
                                 {/* Animated spinning border - solid bg-primary masked into a rotating arc */}
                                 <div
-                                    className={`absolute -inset-1/2 animate-spin [animation-duration:3s] ${index === 0 ? 'bg-emerald-400' : 'bg-[#ff8904]'
+                                    className={`absolute -inset-1/2 animate-spin [animation-duration:6s] ${index === 0 ? 'bg-emerald-400' : 'bg-[#ff8904]'
                                         }`}
                                     style={{
                                         maskImage:
-                                            'conic-gradient(from 0deg, transparent 0%, black 15%, transparent 40%)',
+                                            'conic-gradient(from 0deg, transparent 0%, black 15%, transparent 60%)',
                                         WebkitMaskImage:
-                                            'conic-gradient(from 0deg, transparent 0%, black 15%, transparent 40%)',
+                                            'conic-gradient(from 0deg, transparent 0%, black 15%, transparent 60%)',
                                     }}
                                 />
 

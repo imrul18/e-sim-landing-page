@@ -55,7 +55,7 @@ export default function Packages() {
                     data-aos="fade-up"
                     className="max-w-2xl mx-auto text-center flex flex-col items-center gap-4 mb-16"
                 >
-                    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#fff] tracking-tight leading-tight">
+                    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1a2b49] tracking-tight leading-tight">
                         Our packages
                     </h2>
                     <p className="text-base sm:text-lg text-gray-600">
@@ -70,66 +70,66 @@ export default function Packages() {
                             key={pkg.name}
                             data-aos="fade-up"
                             data-aos-delay={index * 150}
-                            className="relative flex flex-col rounded-t-3xl bg-[#15121f] shadow-[0_20px_50px_rgba(0,0,0,0.35)] transition-transform duration-300 hover:-translate-y-1 "
+                            className="h-full"
                         >
-                            {/* Dark top content */}
-                            <div className="flex flex-col items-center text-center px-8 pt-10 pb-8 flex-1">
+                            <div className="relative flex flex-col h-full rounded-3xl bg-[#fff] shadow-[0_5px_50px_rgba(0,0,0,0.10)] transition-transform duration-300 ease-out transform-gpu will-change-transform hover:scale-105">
+                                {/* Dark top content */}
+                                <div className="flex flex-col items-center text-center px-8 pt-10 pb-8 flex-1">
 
-                                <span className="absolute -top-4 inline-flex items-center gap-2 rounded-full bg-primary backdrop-blur-sm border border-white/20 px-4 py-1.5 text-xs sm:text-sm font-medium text-white">
-                                    {!pkg.name.includes('Unlimited') ? (
-                                        <span className="flex items-center gap-2">
-                                            <Sparkles size={16} /> Populer
+                                    <span className="absolute -top-4 inline-flex items-center gap-2 rounded-full bg-primary backdrop-blur-sm border border-white/20 px-4 py-1.5 text-xs sm:text-sm font-medium text-white">
+                                        {!pkg.name.includes('Unlimited') ? (
+                                            <span className="flex items-center gap-2">
+                                                <Sparkles size={16} /> Populer
+                                            </span>
+                                        ) : (
+                                            <Crown />
+                                        )}
+                                    </span>
+
+                                    <h3 className={`text-2xl my-10 font-bold ${pkg.accent}`}>
+                                        {pkg.name}
+                                    </h3>
+
+                                    <div className="flex items-start justify-center gap-1 mb-8">
+                                        <span className={`text-4xl sm:text-6xl font-extrabold mt-1 ${pkg.accent}`}>
+                                            {pkg.price}
                                         </span>
-                                    ) : (
+                                        <span className="text-base font-medium text-gray-400 self-end mb-1">
+                                            kr
+                                        </span>
+                                    </div>
 
-                                        < Crown />
-                                    )}
-                                </span>
-
-                                <h3 className={`text-2xl my-10 font-bold ${pkg.accent}`}>
-                                    {pkg.name}
-                                </h3>
-                                {/* <div className={`w-14 h-0.5 ${pkg.accentBg} mt-3 mb-6`} /> */}
-
-                                <div className="flex items-start justify-center gap-1 mb-8">
-                                    <span className={`text-4xl sm:text-6xl font-extrabold mt-1 ${pkg.accent}`}>
-                                        {pkg.price}
-                                    </span>
-                                    <span className="text-base font-medium text-gray-400 self-end mb-1">
-                                        kr
-                                    </span>
+                                    <ul className="flex flex-col gap-4 w-full text-left">
+                                        {pkg.features.map((feature) => (
+                                            <li key={feature} className="flex items-start gap-3">
+                                                <Check
+                                                    size={16}
+                                                    strokeWidth={3}
+                                                    className="text-emerald-400 shrink-0 mt-0.5"
+                                                />
+                                                <span className="text-sm font-medium text-black/90 leading-relaxed">
+                                                    {feature}
+                                                </span>
+                                            </li>
+                                        ))}
+                                    </ul>
                                 </div>
 
-                                <ul className="flex flex-col gap-4 w-full text-left">
-                                    {pkg.features.map((feature) => (
-                                        <li key={feature} className="flex items-start gap-3">
-                                            <Check
-                                                size={16}
-                                                strokeWidth={3}
-                                                className="text-emerald-400 shrink-0 mt-0.5"
-                                            />
-                                            <span className="text-sm font-medium text-white/90 leading-relaxed">
-                                                {feature}
-                                            </span>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-
-                            {/* Wavy colored "Buy now" section */}
-                            <div className="relative rounded-b-3xl  overflow-hidden">
-                                <WaveCap colorClass={pkg.accent} />
-                                <a
-                                    href="https://anonymtnorsknr.no/ordrer"
-                                    className={`-mt-px flex items-center justify-center py-5 text-sm font-bold uppercase tracking-wide  text-white ${pkg.accentBg}    transition-opacity duration-200`}
-                                >
-                                    Buy Now
-                                </a>
+                                {/* Wavy colored "Buy now" section */}
+                                <div className="relative rounded-b-3xl overflow-hidden mt-auto">
+                                    <WaveCap colorClass={pkg.accent} />
+                                    <a
+                                        href="https://anonymtnorsknr.no/ordrer"
+                                        className={`-mt-px flex items-center justify-center py-5 text-sm font-bold uppercase tracking-wide text-white ${pkg.accentBg} transition-opacity duration-200`}
+                                    >
+                                        Buy Now
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     ))}
                 </div>
             </div>
-        </section>
+        </section >
     )
 }

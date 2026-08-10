@@ -25,8 +25,8 @@ const contactMethods = [
 export default function Contact() {
   return (
     <section
-      id="kontakt"
-      className="relative w-full bg-white py-20 sm:py-28 overflow-hidden"
+      id="contact"
+      className="relative w-full bg-[#faf9fc] py-20 sm:py-28 overflow-hidden"
     >
       {/* Decorative glow */}
       <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[36rem] h-[36rem] rounded-full bg-primary/10 blur-3xl" />
