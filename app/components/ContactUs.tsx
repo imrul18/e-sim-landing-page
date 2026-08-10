@@ -87,7 +87,7 @@ export default function Contact() {
         {/* Privacy note */}
         <div
           data-aos="fade-up"
-          className="flex items-center justify-center gap-2 mt-10"
+          className="flex items-start justify-center gap-2 mt-10"
         >
           <ShieldCheck size={16} className="text-primary shrink-0" />
           <p className="text-xs sm:text-sm text-gray-500 text-center">
