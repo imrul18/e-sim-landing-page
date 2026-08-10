@@ -75,7 +75,7 @@ export default function Process() {
         <div className="relative mb-20 max-w-3xl mx-auto lg:max-w-4xl">
           <div className="relative flex flex-col gap-16 sm:gap-20">
             {/* Connecting line - center on desktop, left on mobile */}
-            <div className="absolute top-7 bottom-7 left-7 sm:left-1/2 sm:-translate-x-1/2 w-px bg-gradient-to-b from-primary/10 via-primary/30 to-primary/10" />
+            <div className="absolute top-7 bottom-7 left-7 sm:left-1/2 sm:-translate-x-1/2 w-px md:bg-gradient-to-b from-primary/10 via-primary/30 to-primary/10" />
 
             {steps.map((step, index) => {
               const Icon = step.icon
