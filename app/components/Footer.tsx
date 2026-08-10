@@ -11,8 +11,8 @@ const links = [
 
 export default function Footer() {
     return (
-        <div className='bg-white'>
-            <footer className="relative rounded-t-4xl container mx-auto w-full bg-[#0c1120] pt-16 sm:pt-20 overflow-hidden">
+        <div className='bg-black'>
+            <footer className="relative  container mx-auto w-full ] pt-16 sm:pt-20 overflow-hidden">
                 {/* Decorative glow */}
                 <div className="pointer-events-none absolute -top-32 left-1/2 -translate-x-1/2 w-[32rem] h-[32rem] rounded-full bg-primary/10 blur-3xl" />
 

@@ -8,7 +8,7 @@ export default function Hero() {
       {/* Background Image - animated Ken Burns zoom/pan */}
       <div className="absolute inset-0 ">
         <Image
-          src="/1123a32c-6b1c-4cb0-8466-86c3ee7125bb.png"
+          src="/c4e5f3ff-5d05-4d1d-ad99-10f3516ab455.png"
           alt="AnonymtNorskNr"
           fill
           priority
@@ -17,7 +17,7 @@ export default function Hero() {
       </div>
 
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/70 to-black/70" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/80 to-black/70" />
 
       {/* Content */}
       <div data-aos="fade-up" className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center gap-6">

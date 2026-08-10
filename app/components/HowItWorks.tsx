@@ -59,14 +59,14 @@ const dontDo = [
 
 export default function Process() {
   return (
-    <section id="prossessen" className="relative w-full bg-[#faf9fc] py-20 sm:py-28 overflow-hidden">
+    <section id="prossessen" className="relative w-full bg-[#090b0f] py-20 sm:py-28 overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading */}
         <div data-aos="fade-up" className="max-w-2xl mx-auto text-center flex flex-col items-center gap-4 mb-16 sm:mb-20">
           <span className="inline-flex items-center rounded-full bg-primary/10 px-4 py-1.5 text-xs sm:text-sm font-semibold text-primary">
             Process
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1a2b49] tracking-tight leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground tracking-tight leading-tight">
             This is how it works
           </h2>
         </div>
@@ -99,10 +99,10 @@ export default function Process() {
                         <span className="text-xs font-semibold text-primary tracking-widest">
                           STEP {step.number}
                         </span>
-                        <h3 className="text-base sm:text-lg font-semibold text-[#1a2b49] leading-snug">
+                        <h3 className="text-base sm:text-lg font-semibold text-foreground leading-snug">
                           {step.title}
                         </h3>
-                        <p className="text-sm text-gray-600 leading-relaxed max-w-sm ml-auto">
+                        <p className="text-sm text-muted leading-relaxed max-w-sm ml-auto">
                           {step.description}
                         </p>
                       </>
@@ -110,7 +110,7 @@ export default function Process() {
                   </div>
 
                   {/* Center icon node */}
-                  <div className="flex items-center justify-center w-14 h-14 rounded-full bg-primary text-white shadow-[0_4px_16px_rgba(26,43,73,0.15)] ring-8 ring-white shrink-0 mx-auto sm:mx-0">
+                  <div className="flex items-center justify-center w-14 h-14 rounded-full bg-primary text-white shadow-[0_4px_16px_rgba(0,0,0,0.25)] ring-8 ring-background shrink-0 mx-auto sm:mx-0">
                     <Icon size={24} strokeWidth={1.75} />
                   </div>
 
@@ -125,10 +125,10 @@ export default function Process() {
                         <span className="text-xs font-semibold text-primary tracking-widest">
                           STEP {step.number}
                         </span>
-                        <h3 className="text-base sm:text-lg font-semibold text-[#1a2b49] leading-snug">
+                        <h3 className="text-base sm:text-lg font-semibold text-foreground leading-snug">
                           {step.title}
                         </h3>
-                        <p className="text-sm text-gray-600 leading-relaxed max-w-sm">
+                        <p className="text-sm text-muted leading-relaxed max-w-sm">
                           {step.description}
                         </p>
                       </>
@@ -140,10 +140,10 @@ export default function Process() {
                     <span className="text-xs font-semibold text-primary tracking-widest">
                       STEP {step.number}
                     </span>
-                    <h3 className="text-base font-semibold text-[#1a2b49] leading-snug">
+                    <h3 className="text-base font-semibold text-foreground leading-snug">
                       {step.title}
                     </h3>
-                    <p className="text-sm text-gray-600 leading-relaxed">
+                    <p className="text-sm text-muted leading-relaxed">
                       {step.description}
                     </p>
                   </div>
@@ -154,7 +154,7 @@ export default function Process() {
         </div>
 
         {/* What we do not do */}
-        <div data-aos="fade-up" className="relative rounded-[24px] bg-[#1a2b49] p-8 sm:p-10 lg:p-12 overflow-hidden">
+        <div data-aos="fade-up" className="relative rounded-[24px] bg-card p-8 sm:p-10 lg:p-12 overflow-hidden">
           {/* Decorative blur */}
           <div className="pointer-events-none absolute -top-16 -right-16 w-64 h-64 rounded-full bg-primary/20 blur-3xl" />
 

@@ -55,10 +55,10 @@ export default function Packages() {
                     data-aos="fade-up"
                     className="max-w-2xl mx-auto text-center flex flex-col items-center gap-4 mb-16"
                 >
-                    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1a2b49] tracking-tight leading-tight">
+                    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground tracking-tight leading-tight">
                         Our packages
                     </h2>
-                    <p className="text-base sm:text-lg text-gray-600">
+                    <p className="text-base sm:text-lg text-muted">
                         Choose the one that suits you best
                     </p>
                 </div>
@@ -72,7 +72,7 @@ export default function Packages() {
                             data-aos-delay={index * 150}
                             className="h-full"
                         >
-                            <div className="relative flex flex-col h-full rounded-3xl bg-[#fff] shadow-[0_5px_50px_rgba(0,0,0,0.10)] transition-transform duration-300 ease-out transform-gpu will-change-transform hover:scale-105">
+                            <div className="relative flex flex-col h-full rounded-3xl bg-card border border-border shadow-[0_5px_50px_rgba(0,0,0,0.25)] transition-transform duration-300 ease-out transform-gpu will-change-transform hover:scale-105">
                                 {/* Dark top content */}
                                 <div className="flex flex-col items-center text-center px-8 pt-10 pb-8 flex-1">
 
@@ -94,7 +94,7 @@ export default function Packages() {
                                         <span className={`text-4xl sm:text-6xl font-extrabold mt-1 ${pkg.accent}`}>
                                             {pkg.price}
                                         </span>
-                                        <span className="text-base font-medium text-gray-400 self-end mb-1">
+                                        <span className="text-base font-medium text-muted self-end mb-1">
                                             kr
                                         </span>
                                     </div>
@@ -107,7 +107,7 @@ export default function Packages() {
                                                     strokeWidth={3}
                                                     className="text-emerald-400 shrink-0 mt-0.5"
                                                 />
-                                                <span className="text-sm font-medium text-black/90 leading-relaxed">
+                                                <span className="text-sm font-medium text-foreground leading-relaxed">
                                                     {feature}
                                                 </span>
                                             </li>

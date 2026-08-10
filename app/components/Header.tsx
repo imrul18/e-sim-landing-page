@@ -86,10 +86,10 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-5 rounded-full left-0 right-0 container mx-auto z-50 transition-all duration-300 ease-in-out ${
+      className={`fixed top-5 rounded-full border border-primary left-0 right-0 container mx-auto z-50 transition-all duration-300 ease-in-out ${
         scrolled
-          ? 'bg-[#1a2c49e8] max-w-6xl backdrop-blur-md shadow-md py-2'
-          : ' py-3 bg-[#1a2c49e8] backdrop-blur-sm shadow-sm '
+          ? 'bg-black/40 max-w-6xl backdrop-blur-lg shadow-md py-2'
+          : 'py-3 bg-black/40 backdrop-blur-lg shadow-sm'
       }`}
     >
       <div className="mx-auto px-4 flex items-center justify-between relative">
@@ -158,7 +158,7 @@ export default function Header() {
               : 'opacity-0 scale-95 -translate-y-2 pointer-events-none'
           }`}
         >
-          <nav className="flex flex-col gap-4 px-5 py-6 bg-[#1a2c49] backdrop-blur-md rounded-2xl shadow-lg">
+          <nav className="flex flex-col gap-4 px-5 py-6 bg-card backdrop-blur-md rounded-2xl shadow-lg">
             {navItems
               .filter((item) => item.label)
               .map((item) => {

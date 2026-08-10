@@ -28,7 +28,7 @@ export default function Payment() {
                 {/* Heading */}
                 <h2
                     data-aos="fade-up"
-                    className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1a2b49] text-center tracking-tight mb-12 sm:mb-16"
+                    className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#fff] text-center tracking-tight mb-12 sm:mb-16"
                 >
                     Payment
                 </h2>
