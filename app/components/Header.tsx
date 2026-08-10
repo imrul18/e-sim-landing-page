@@ -80,7 +80,7 @@ export default function Header() {
   return (
     <header
       className={`fixed  top-5 rounded-full left-0 right-0  container mx-auto z-50 transition-all duration-300 ease-in-out ${scrolled
-        ? 'bg-[#1a2c49f8] max-w-6xl backdrop-blur-md shadow-md py-2'
+        ? 'bg-[#1a2c49e8] max-w-6xl backdrop-blur-md shadow-md py-2'
         : ' py-3 bg-[#1a2c49e8] backdrop-blur-sm shadow-sm '
         }`}
     >

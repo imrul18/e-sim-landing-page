@@ -1,13 +1,16 @@
+
+
 import type { Metadata } from "next";
-import { Rubik } from "next/font/google";
+import { VT323 } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
 import AosProvider from "./components/AosProvider";
 import SmoothScroll from "./components/SmoothScroll";
 import Footer from "./components/Footer";
 
-const rubik = Rubik({
-  variable: "--font-rubik",
+const vt323 = VT323({
+  variable: "--font-vt323",
+  weight: "400",
   subsets: ["latin"],
 });
 
@@ -20,9 +23,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${rubik.variable} h-full antialiased`}
-    > 
-      <body className="min-h-full flex flex-col">
+      className={`${vt323.variable} h-full antialiased`}
+    >
+      <body className={`${vt323.className} min-h-full flex flex-col`}>
         <AosProvider />
         <SmoothScroll />
         <Header />
