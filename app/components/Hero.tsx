@@ -6,9 +6,9 @@ export default function Hero() {
   return (
     <section id="hero" className="relative h-screen w-full flex items-center justify-center overflow-hidden">
       {/* Background Image - animated Ken Burns zoom/pan */}
-      <div className="absolute inset-0 animate-bg-pan">
+      <div className="absolute inset-0 ">
         <Image
-          src="/Hero_bg.png"
+          src="/1123a32c-6b1c-4cb0-8466-86c3ee7125bb.png"
           alt="AnonymtNorskNr"
           fill
           priority
@@ -17,12 +17,12 @@ export default function Hero() {
       </div>
 
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white/50 via-white/60 to-black/30" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/70 to-black/70" />
 
       {/* Content */}
       <div data-aos="fade-up" className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center gap-6">
-        <span data-aos="fade-down" data-aos-delay="100" className="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-sm border border-primary  px-4 py-1.5 text-xs sm:text-sm font-medium text-primary">
-          <HatGlassesIcon className="text-primary" /> 100% anonymous • No IP • No data stored
+        <span data-aos="fade-down" data-aos-delay="100" className="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-sm border border-white  px-4 py-1.5 text-xs sm:text-sm font-medium text-white">
+          <HatGlassesIcon className="text-white" /> 100% anonymous • No IP • No data stored
         </span>
         <h1
           data-aos="fade-up"
@@ -33,7 +33,7 @@ export default function Hero() {
           <br className="hidden sm:block" /> sim-card without traces
         </h1>
 
-        <p data-aos="fade-up" data-aos-delay="300" className="text-base sm:text-lg text-black/80 max-w-xl">
+        <p data-aos="fade-up" data-aos-delay="300" className="text-base sm:text-lg text-white/80 max-w-xl">
           Register with your name or unlimited data within 60 minutes
         </p>
 
