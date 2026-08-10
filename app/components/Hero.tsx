@@ -12,7 +12,7 @@ export default function Hero() {
           alt="AnonymtNorskNr"
           fill
           priority
-          className="object-cover object-center"
+          className="md:object-cover md:object-center object-cover object-left "
         />
       </div>
 
