@@ -21,8 +21,8 @@ export default function Hero() {
 
       {/* Content */}
       <div data-aos="fade-up" className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center gap-6">
-        <span data-aos="fade-down" data-aos-delay="100" className="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-sm border border-white  px-4 py-1.5 text-xs sm:text-sm font-medium text-white">
-          <HatGlassesIcon className="text-white" /> 100% anonymous • No IP • No data stored
+        <span data-aos="fade-down" data-aos-delay="100" className="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-sm border border-primary  px-4 py-1.5 text-xs sm:text-sm font-medium text-primary">
+          <HatGlassesIcon className="text-primary" /> 100% anonymous • No IP • No data stored
         </span>
         <h1
           data-aos="fade-up"
