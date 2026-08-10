@@ -6,7 +6,7 @@ import { Menu, X } from 'lucide-react'
 import Image from 'next/image'
 
 const navItems = [
-  { label: '', href: '#hero' },
+  { label: 'Home', href: '#hero' },
   { label: 'Packages', href: '#pakker' },
   { label: 'Process', href: '#prossessen' },
   { label: 'About us', href: '#about-us' },
@@ -47,7 +47,6 @@ export default function Header() {
         })
       },
       {
-        // triggers when section top passes header, keeps active until next section takes over
         rootMargin: `-${HEADER_OFFSET}px 0px -60% 0px`,
         threshold: 0,
       }
@@ -57,6 +56,14 @@ export default function Header() {
 
     return () => observer.disconnect()
   }, [])
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    document.body.style.overflow = mobileOpen ? 'hidden' : ''
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [mobileOpen])
 
   const handleNavClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
@@ -71,7 +78,7 @@ export default function Header() {
         target.getBoundingClientRect().top + window.scrollY - HEADER_OFFSET
       window.scrollTo({ top, behavior: 'smooth' })
       window.history.pushState(null, '', href)
-      setActiveSection(targetId) // instant feedback on click
+      setActiveSection(targetId)
     }
 
     setMobileOpen(false)
@@ -79,17 +86,19 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed  top-5 rounded-full left-0 right-0  container mx-auto z-50 transition-all duration-300 ease-in-out ${scrolled
-        ? 'bg-[#1a2c49e8] max-w-6xl backdrop-blur-md shadow-md py-2'
-        : ' py-3 bg-[#1a2c49e8] backdrop-blur-sm shadow-sm '
-        }`}
+      className={`fixed top-5 rounded-full left-0 right-0 container mx-auto z-50 transition-all duration-300 ease-in-out ${
+        scrolled
+          ? 'bg-[#1a2c49e8] max-w-6xl backdrop-blur-md shadow-md py-2'
+          : ' py-3 bg-[#1a2c49e8] backdrop-blur-sm shadow-sm '
+      }`}
     >
-      <div className=" mx-auto px-4 flex items-center justify-between">
+      <div className="mx-auto px-4 flex items-center justify-between relative">
         {/* Logo */}
         <Link
           href="/"
-          className={`font-bold tracking-tight transition-all duration-300 ${scrolled ? 'text-lg' : 'text-xl'
-            } text-primary flex items-center gap-2`}
+          className={`font-bold tracking-tight transition-all duration-300 ${
+            scrolled ? 'text-lg' : 'text-xl'
+          } text-primary flex items-center gap-2`}
         >
           <Image
             src="/header_logo-removebg-preview.png"
@@ -101,20 +110,23 @@ export default function Header() {
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8">
-          {navItems.map((item) => {
-            const isActive = activeSection === item.href.replace('#', '')
-            return (
-              <a
-                key={item.href}
-                href={item.href}
-                onClick={(e) => handleNavClick(e, item.href)}
-                className={`text-[15px] font-medium transition-colors duration-200 ${isActive ? 'text-primary' : 'text-white/80 hover:text-primary'
+          {navItems
+            .filter((item) => item.label)
+            .map((item) => {
+              const isActive = activeSection === item.href.replace('#', '')
+              return (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  onClick={(e) => handleNavClick(e, item.href)}
+                  className={`text-[15px] font-medium transition-colors duration-200 ${
+                    isActive ? 'text-primary' : 'text-white/80 hover:text-primary'
                   }`}
-              >
-                {item.label}
-              </a>
-            )
-          })}
+                >
+                  {item.label}
+                </a>
+              )
+            })}
         </nav>
 
         {/* CTA Button */}
@@ -132,44 +144,49 @@ export default function Header() {
         {/* Mobile menu toggle */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden text-white"
+          className="md:hidden text-white z-50"
           aria-label="Toggle menu"
         >
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
-      </div >
 
-      {/* Mobile Nav */}
-      < div
-        className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${mobileOpen ? 'max-h-96 opacity-100 mt-4' : 'max-h-0 opacity-0'
-          }`
-        }
-      >
-        <nav className="flex flex-col gap-4 px-4 pb-4 bg-black/60 backdrop-blur-md rounded-b-2xl">
-          {navItems.map((item) => {
-            const isActive = activeSection === item.href.replace('#', '')
-            return (
-              <a
-                key={item.href}
-                href={item.href}
-                onClick={(e) => handleNavClick(e, item.href)}
-                className={`text-sm font-medium transition-colors duration-200 ${isActive ? 'text-primary' : 'text-white/70 hover:text-primary'
-                  }`}
-              >
-                {item.label}
-              </a>
-            )
-          })}
-          <a
-            href="https://anonymtnorsknr.no/ordrer"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-white hover:opacity-90 transition-opacity duration-200"
-          >
-            Order status
-          </a>
-        </nav>
-      </div >
-    </header >
+        {/* Mobile Nav */}
+        <div
+          className={`md:hidden absolute left-0 right-0 top-full mt-3 transition-all duration-300 ease-in-out origin-top ${
+            mobileOpen
+              ? 'opacity-100 scale-100 translate-y-0 pointer-events-auto'
+              : 'opacity-0 scale-95 -translate-y-2 pointer-events-none'
+          }`}
+        >
+          <nav className="flex flex-col gap-4 px-5 py-6 bg-[#1a2c49f5] backdrop-blur-md rounded-2xl shadow-lg">
+            {navItems
+              .filter((item) => item.label)
+              .map((item) => {
+                const isActive = activeSection === item.href.replace('#', '')
+                return (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    onClick={(e) => handleNavClick(e, item.href)}
+                    className={`text-sm font-medium transition-colors duration-200 ${
+                      isActive ? 'text-primary' : 'text-white/70 hover:text-primary'
+                    }`}
+                  >
+                    {item.label}
+                  </a>
+                )
+              })}
+            <a
+              href="https://anonymtnorsknr.no/ordrer"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-white hover:opacity-90 transition-opacity duration-200"
+            >
+              Order status
+            </a>
+          </nav>
+        </div>
+      </div>
+    </header>
   )
 }
