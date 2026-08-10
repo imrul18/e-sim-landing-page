@@ -57,7 +57,7 @@ export default function Payment() {
                                 />
 
                                 {/* Card content */}
-                                <div className="relative z-10 flex flex-col items-center text-center gap-4 rounded-[18px] bg-[#0c1120] px-6 py-10 h-full transition-all duration-300 group-hover:-translate-y-1">
+                                <div className="relative z-10 flex flex-col items-center text-center gap-4 rounded-[18px] bg-[#1a2c49] px-6 py-10 h-full transition-all duration-300 group-hover:-translate-y-1">
                                     <div
                                         className={`flex items-center justify-center w-14 h-14 rounded-full ${method.iconBg} ${method.iconColor} transition-transform duration-300 group-hover:scale-110`}
                                     >
