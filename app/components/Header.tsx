@@ -158,7 +158,7 @@ export default function Header() {
               : 'opacity-0 scale-95 -translate-y-2 pointer-events-none'
           }`}
         >
-          <nav className="flex flex-col gap-4 px-5 py-6 bg-[#1a2c49f5] backdrop-blur-md rounded-2xl shadow-lg">
+          <nav className="flex flex-col gap-4 px-5 py-6 bg-[#1a2c49] backdrop-blur-md rounded-2xl shadow-lg">
             {navItems
               .filter((item) => item.label)
               .map((item) => {
