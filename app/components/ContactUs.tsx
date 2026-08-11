@@ -13,14 +13,14 @@ const contactMethods = [
     icon: Globe,
     label: 'Website',
     value: 'anonymtnorsknr.com',
-    href: 'https://anonymtnorsknr.com',
+    href: '#contact',
     borderColor: 'bg-[#ff8904]',
   },
   {
     icon: MessageCircleMore,
     label: 'Order status',
     value: 'Track your order',
-    href: 'https://anonymtnorsknr.no/ordrer',
+    href: '#contact',
     borderColor: 'bg-sky-400',
   },
 ]

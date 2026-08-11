@@ -86,19 +86,17 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-5 rounded-full border border-primary left-0 right-0 container mx-auto z-50 transition-all duration-300 ease-in-out ${
-        scrolled
-          ? 'bg-black/40 max-w-6xl backdrop-blur-lg shadow-md py-2'
-          : 'py-3 bg-black/40 backdrop-blur-lg shadow-sm'
-      }`}
+      className={`fixed top-5 rounded-full border border-primary left-0 right-0 container mx-auto z-50 transition-all duration-300 ease-in-out ${scrolled
+        ? 'bg-black/40 max-w-6xl backdrop-blur-lg shadow-md py-2'
+        : 'py-3 bg-black/40 backdrop-blur-lg shadow-sm'
+        }`}
     >
       <div className="mx-auto px-4 flex items-center justify-between relative">
         {/* Logo */}
         <Link
           href="/"
-          className={`font-bold tracking-tight transition-all duration-300 ${
-            scrolled ? 'text-lg' : 'text-xl'
-          } text-primary flex items-center gap-2`}
+          className={`font-bold tracking-tight transition-all duration-300 ${scrolled ? 'text-lg' : 'text-xl'
+            } text-primary flex items-center gap-2`}
         >
           <Image
             src="/header_logo-removebg-preview.png"
@@ -119,9 +117,8 @@ export default function Header() {
                   key={item.href}
                   href={item.href}
                   onClick={(e) => handleNavClick(e, item.href)}
-                  className={`text-[15px] font-medium transition-colors duration-200 ${
-                    isActive ? 'text-primary' : 'text-white/80 hover:text-primary'
-                  }`}
+                  className={`text-[15px] font-medium transition-colors duration-200 ${isActive ? 'text-primary' : 'text-white/80 hover:text-primary'
+                    }`}
                 >
                   {item.label}
                 </a>
@@ -132,8 +129,7 @@ export default function Header() {
         {/* CTA Button */}
         <div className="hidden md:block">
           <a
-            href="https://anonymtnorsknr.no/ordrer"
-            target="_blank"
+            href="#contact"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-white hover:opacity-90 transition-opacity duration-200"
           >
@@ -152,11 +148,10 @@ export default function Header() {
 
         {/* Mobile Nav */}
         <div
-          className={`md:hidden absolute left-0 right-0 top-full mt-3 transition-all duration-300 ease-in-out origin-top ${
-            mobileOpen
-              ? 'opacity-100 scale-100 translate-y-0 pointer-events-auto'
-              : 'opacity-0 scale-95 -translate-y-2 pointer-events-none'
-          }`}
+          className={`md:hidden absolute left-0 right-0 top-full mt-3 transition-all duration-300 ease-in-out origin-top ${mobileOpen
+            ? 'opacity-100 scale-100 translate-y-0 pointer-events-auto'
+            : 'opacity-0 scale-95 -translate-y-2 pointer-events-none'
+            }`}
         >
           <nav className="flex flex-col gap-4 px-5 py-6 bg-card backdrop-blur-md rounded-2xl shadow-lg">
             {navItems
@@ -168,17 +163,15 @@ export default function Header() {
                     key={item.href}
                     href={item.href}
                     onClick={(e) => handleNavClick(e, item.href)}
-                    className={`text-sm font-medium transition-colors duration-200 ${
-                      isActive ? 'text-primary' : 'text-white/70 hover:text-primary'
-                    }`}
+                    className={`text-sm font-medium transition-colors duration-200 ${isActive ? 'text-primary' : 'text-white/70 hover:text-primary'
+                      }`}
                   >
                     {item.label}
                   </a>
                 )
               })}
             <a
-              href="https://anonymtnorsknr.no/ordrer"
-              target="_blank"
+              href="#contact"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-white hover:opacity-90 transition-opacity duration-200"
             >
