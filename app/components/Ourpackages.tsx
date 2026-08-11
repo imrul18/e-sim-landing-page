@@ -115,7 +115,6 @@ export default function Packages() {
                   </ul>
                 </div>
 
-                {/* Wavy colored "Buy now" section */}
                 <div className="relative rounded-b-3xl overflow-hidden mt-auto">
                   <WaveCap colorClass={pkg.accent} />
                   <a
